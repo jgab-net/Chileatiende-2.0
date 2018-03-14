@@ -16,7 +16,7 @@ window.numeral.locale('es',require('numeral/locales/es'));
 try {
     window.$ = window.jQuery = require('jquery');
 
-    require('bootstrap-sass');
+    require('bootstrap');
 } catch (e) {}
 
 /**

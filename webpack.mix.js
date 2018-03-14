@@ -20,10 +20,10 @@ mix.js('resources/assets/js/app.js', 'public/js')
     .browserSync({
         open: false,
         proxy: {
-            target: 'localhost:8000',
+            target: '192.168.1.201:8000',
             reqHeaders: function() {
                 return {
-                    host: 'localhost:3000'
+                    host: '192.168.1.201:3000'
                 };
             }
         }
