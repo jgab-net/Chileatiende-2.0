@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" class="a11y-font-0">
 <head>
     <base href="<?=url('')?>" />
     <meta charset="utf-8">
@@ -24,8 +24,11 @@
         <meta name="twitter:creator" content="<?=$author?>">
     <?php endif ?>
 
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab">
     <!-- Bootstrap -->
     <link href="css/app.css" rel="stylesheet">
 
 </head>
-<body>
+<body class="footer-links-11">

@@ -13,8 +13,12 @@ let mix = require('laravel-mix');
 
 mix.js('resources/assets/js/app.js', 'public/js')
     .js('resources/assets/js/backend.js', 'public/js')
-    .sass('resources/assets/sass/app.scss', 'public/css')
-    .sass('resources/assets/sass/backend.scss', 'public/css')
+    .sass('resources/assets/sass/app.scss', 'public/css', {
+        precision: 10
+    })
+    .sass('resources/assets/sass/backend.scss', 'public/css', {
+        precision: 10
+    })
     .copy('resources/assets/images','public/images')
     .sourceMaps()
     .browserSync({

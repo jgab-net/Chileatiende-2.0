@@ -1,124 +1,106 @@
-<nav class="navbar navbar-default navbar-static-top">
+<nav class="navbar navbar-expand-a11y navbar-light fixed-top">
     <div class="container">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-            <a class="navbar-brand" href="">
-                <img class="gob hidden-xs" src="images/gob.svg" alt="Gobierno de Chile" />
-                <img src="images/logo.svg" alt="ChileAtiende" class="hidden-xs" />
-                <img src="images/logo-color.svg" alt="ChileAtiende" class="visible-xs img-responsive logo-mobile" />
+        <a href="/" class="navbar-brand align-self-start">
+            <img src="images/logo-w-line-navbar.svg" alt="ChileAtiende" class="hidden-xs" />
+        </a>
+        <div class="nav-content">
+            <a href="#" class="btn btn-search btn-search--mobile toggle-search">
+                <i class="ic-search btn-search_icon">
+                </i>
+                <i class="ic-close btn-search_icon">
+                </i>
             </a>
-            <div class="visible-xs-block text-right">
-                <mobile-menu :user="<?= e(Auth::check() ? Auth::user() : 'null') ?>"></mobile-menu>
-            </div>
-        </div>
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse">
-            <ul class="nav navbar-nav navbar-right">
-                <?php if(@$skin == 'exterior'):?>
-                    <li><a href="/que-es-chileatiende?skin=exterior">¿Qué es ChileAtiende en el exterior?</a></li>
-                <?php else: ?>
-                <li><a href="/que-es-chileatiende">¿Qué es ChileAtiende?</a></li>
-                <?php endif ?>
-                <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                        Centro de Ayuda <span class="caret"></span>
+            <div class="dropdown lang">
+                <a id="dropdownMenuLang" href="#" data-toggle="dropdown" role="button" aira-haspopup="true" aria-expanded="false" class="btn btn-seconday dropdown-toggle">es
+                </a>
+                <div aria-labelledby="dropdownMenuLang" class="dropdown-menu">
+                    <a href="#" title="Escoge un idioma: Español" class="dropdown-item">ES
                     </a>
-                    <ul class="dropdown-menu help-menu">
-                        <li>
-                            <a href="/ayuda/preguntas-frecuentes<?=@$skin == 'exterior' ? '?skin=exterior':''?>" class="help-card" title="Ir a preguntas frecuentes">
-                                <div class="media <?= Request::path() == 'ayuda/preguntas-frecuentes' ? 'active' : '' ?>">
-                                    <div class="media-left">
-                                        <i class="material-icons">help</i>
-                                    </div>
-                                    <div class="media-body">
-                                        <div class="media-heading">Preguntas Frecuentes</div>
-                                        <p>Revisa la lista de preguntas frecuentes.</p>
-                                    </div>
-                                </div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="/ayuda/sucursales" class="help-card" title="ir a sucursales">
-                                <div class="media <?= Request::path() == 'ayuda/sucursales' ? 'active' : '' ?>">
-                                    <div class="media-left">
-                                        <i class="material-icons">store</i>
-                                    </div>
-                                    <div class="media-body">
-                                        <div class="media-heading">Sucursales</div>
-                                        <p>Busca tu sucursal de ChileAtiende más cercana.</p>
-                                    </div>
-                                </div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="/ayuda/atencion-telefonica" class="help-card" title="Ir a atención telefónica">
-                                <div class="media <?= Request::path() == 'ayuda/atencion-telefonica' ? 'active' : '' ?>">
-                                    <div class="media-left">
-                                        <i class="material-icons">perm_phone_msg</i>
-                                    </div>
-                                    <div class="media-body">
-                                        <div class="media-heading">Atención Telefónica</div>
-                                        <p>Aprende a utilizar el servicio de telefónica 101.</p>
-                                    </div>
-                                </div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="/ayuda/oficinas-moviles" class="help-card">
-                                <div class="media <?= Request::path() == 'ayuda/oficinas-moviles' ? 'active' : '' ?>">
-                                    <div class="media-left">
-                                        <i class="material-icons">directions_bus</i>
-                                    </div>
-                                    <div class="media-body">
-                                        <div class="media-heading">Oficinas Móviles</div>
-                                        <p>Conoce la ubicación de nuestras oficinas móviles.</p>
-                                    </div>
-                                </div>
-                            </a>
-                        </li>
-                    </ul>
+                    <a href="#" title="Escoge un idioma: Inglés" class="dropdown-item">EN
+                    </a>
+                </div>
+            </div>
+            <button type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" class="navbar-toggler">
+    <span class="navbar-toggler-icon">
+    </span>
+            </button>
+        </div>
+        <div id="navbarSupportedContent" class="navbar-collapse collapse justify-content-end">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a href="/que-es-chileatiende" class="nav-link">¿Qué es ChileAtiende?</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                        Centro de Ayuda
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a href="/ayuda/preguntas-frecuentes" class="dropdown-item <?= Request::path() == 'ayuda/preguntas-frecuentes' ? 'active' : '' ?>" title="Ir a preguntas frecuentes">
+                            <div>Preguntas Frecuentes</div>
+                            <p><small>Revisa la lista de preguntas frecuentes.</small></p>
+                        </a>
+                        <a href="/ayuda/sucursales" class="dropdown-item <?= Request::path() == 'ayuda/sucursales' ? 'active' : '' ?>" title="ir a sucursales">
+                            <div>Sucursales</div>
+                            <p><small>Busca tu sucursal de ChileAtiende más cercana.</small></p>
+                        </a>
+                        <a href="/ayuda/atencion-telefonica" class="dropdown-item <?= Request::path() == 'ayuda/atencion-telefonica' ? 'active' : '' ?>" title="Ir a atención telefónica">
+                            <div>Atención Telefónica</div>
+                            <p><small>Aprende a utilizar el servicio de telefónica 101.</small></p>
+                        </a>
+                        <a href="/ayuda/oficinas-moviles" class="dropdown-item <?= Request::path() == 'ayuda/oficinas-moviles' ? 'active' : '' ?>">
+                            <div>Oficinas Móviles</div>
+                            <p><small>Conoce la ubicación de nuestras oficinas móviles.</small></p>
+                        </a>
+                    </div>
+                </li>
+                <li class="nav-item nav-item-action nav-item-desktop">
+                    <a href="#" class="btn btn-search toggle-search">
+                        <i class="ic-search btn-search_icon">
+                        </i>
+                        <i class="ic-close btn-search_icon">
+                        </i>
+                    </a>
+                </li>
+                <li class="nav-item dropdown nav-item-desktop lang">
+                    <a id="navbarDropdownMenuLang" href="#" data-toggle="dropdown" aira-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle">ES
+                    </a>
+                    <div aria-labelledby="navbaºrDropdownMenuLang" class="dropdown-menu">
+                        <a href="#" title="Escoge un idioma: Español" class="dropdown-item">ES
+                        </a>
+                        <a href="#" title="Escoge un idioma: Inglés" class="dropdown-item">EN
+                        </a>
+                    </div>
                 </li>
                 <?php if(Auth::check()):?>
-                    <li class="dropdown">
-                        <a href="#" class="mcha-btn dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                            <img src="images/clave-logo.svg" alt="Logo Claveúnica"> Mi Chileatiende <span class="caret"></span>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                            <img src="images/clave-logo.svg" alt="Logo Claveúnica"> <?=Auth::user()->first_name?>
                         </a>
-                        <ul class="mcha-dropdown dropdown-menu">
-                            <li>Bienvenido/a <?=Auth::user()->first_name?></li>
-                            <li>
-                                <a href="perfil">
-                                    <i class="material-icons">person</i>
-                                    Perfil
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                                    <i class="material-icons">power_settings_new</i>
-                                    Cerrar Sesión
-                                </a>
-                                <form id="logout-form" action="logout" method="POST" style="display: none;">
-                                    <?= csrf_field() ?>
-                                </form>
-                            </li>
-                        </ul>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a href="/perfil"  class="dropdown-item">
+                                Perfil
+                            </a>
+                            <a href="#" class="dropdown-item" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                Cerrar Sesión
+                            </a>
+                            <form id="logout-form" action="logout" method="POST" class="d-none">
+                                <?= csrf_field() ?>
+                            </form>
+                        </div>
                     </li>
-                    <li>
-                        <a href="notificaciones" class="notifications">
-                            <i class="material-icons">notifications</i>
-                            <span class="notification-badge">
+                    <li class="nav-item">
+                        <a href="/notificaciones" class="nav-link">
+                            <span class="badge badge-primary">
                                 <?=Auth::user()->notifications()->where('read',0)->count()?>
                             </span>
                         </a>
                     </li>
                 <?php else: ?>
-                    <?php /*
-                    <li><a href="mi-chileatiende" class="mcha-btn">
-                            <img src="images/clave-logo.svg" alt="Logo Claveúnica">
-                            Accede a Mi ChileAtiende</a>
+                    <li class="nav-item nav-item-access">
+                        <a href="/mi-chileatiende" class="nav-link">Iniciar sesión</a>
                     </li>
-                    */ ?>
                 <?php endif ?>
             </ul>
-        </div><!-- /.navbar-collapse -->
-    </div><!-- /.container-fluid -->
+        </div>
+    </div>
 </nav>

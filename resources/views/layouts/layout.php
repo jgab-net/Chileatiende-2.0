@@ -1,7 +1,8 @@
 <?=view('chunks/head', $__data)?>
+<?= view('chunks/navbar') ?>
+<main class="site-main">
 <div id="app">
     <header class="default">
-        <?= view('chunks/navbar') ?>
 
         <?php if(@!$hideSearch): ?>
         <div class="search-area hidden-print">
@@ -18,7 +19,7 @@
     <main>
         <?=$content?>
     </main>
-
-    <?=view('chunks/footer')?>
 </div>
+</main>
+<?=view('chunks/footer')?>
 <?=view('chunks/foot')?>

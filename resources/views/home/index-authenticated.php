@@ -36,36 +36,80 @@
             </div>
         </div>
     </div>
-    <div class="featured-area">
-        <div class="container">
-            <div class="title">
-                <div class="heading-container">
-                    <h2>Destacados</h2>
-                </div>
-                <a href="fichas/destacadas" class="featured-button hidden-xs">
-                    Ver todos los destacados
-                </a>
-            </div>
-            <div class="featured-list">
-                <div class="featured-items">
-                <?php foreach ($featured as $f): ?>
-                    <?php $f->publishedVersion() ?>
-                    <div class="featured-item">
-                        <a class="header"
-                           href="fichas/<?= $f->guid ?>" <?= $f->image ? 'style="background-image: url(' . $f->image . ')"' : '' ?>>
-                            <?php if (!$f->image): ?>
-                                <div class="image <?= (strlen($f->title) > 50 ? 'long-h' : 'short-h'); ?>">
-                                    <?= $f->title ?>
-                                </div>
-                            <?php endif ?>
-                        </a>
-                        <div class="caption">
-                            <h3><a href="fichas/<?= $f->guid ?>" data-ga-te-category="Menu Accesos" data-ga-te-action="clic" data-ga-te-value="<?=$f->id?>"><?= $f->title . ' →' ?></a></h3>
-                        </div>
-                    </div>
-                <?php endforeach ?>
-                </div>
-            </div>
-        </div>
-    </div>
 </div>
+<?php if(!empty($featured)):?>
+    <section>
+        <div class="container">
+            <section class="sub-section">
+                <h2 class="heading-medium a11y-tts">
+                    Destacados
+                </h2>
+                <div class="row">
+                    <?php foreach ($featured as $f): ?>
+                        <?php $f->publishedVersion() ?>
+                        <div class="col-lg-6 col-xl-3">
+                            <article class="new new--mobile d-block d-lg-none a11y-tts">
+                                <figure class="new_figure-mobile">
+                                    <img
+                                            src="<?= $f->image ?>"
+                                            alt="<?= $f->title ?>"
+                                            class="img-fluid w-100 img-frame"
+                                    >
+                                </figure>
+                                <div class="new_title">
+                                    <a
+                                            href="fichas/<?= $f->guid ?>"
+                                            data-ga-te-category="Tabs Fichas"
+                                            data-ga-te-action="Ficha Destacadas"
+                                            data-ga-te-value="<?=$f->id?>"
+                                            class="link link-clean"
+                                    >
+                                        <h4><?= $f->title ?></h4>
+                                    </a>
+                                    <a
+                                            href="fichas/<?= $f->guid ?>"
+                                            data-ga-te-category="Tabs Fichas"
+                                            data-ga-te-action="Ficha Destacadas"
+                                            data-ga-te-value="<?=$f->id?>"
+                                            class="link link--text-dark visited"
+                                    >
+                                        <?= $f->title ?>
+                                    </a>
+                                </div>
+                            </article>
+                            <a
+                                    href="fichas/<?= $f->guid ?>"
+                                    data-ga-te-category="Tabs Fichas"
+                                    data-ga-te-action="Ficha Destacadas"
+                                    data-ga-te-value="<?=$f->id?>"
+                                    class="featured-card has-icon d-none d-lg-block a11y-tts"
+                            >
+                                <div class="featured-card_figure elem-bg">
+                                    <img
+                                            src="<?= $f->image ?>"
+                                            alt="<?= $f->title ?>"
+                                            class="card_image img-to-bg"
+                                    >
+                                </div>
+                                <div class="featured-card_body">
+                                    <h2 class="featured-card_title">
+                                        <?= $f->title ?>
+                                    </h2>
+                                    <p>
+                                        <?= $f->title ?>
+                                    </p>
+                                </div>
+                            </a>
+                        </div>
+                    <?php endforeach ?>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4 offset-lg-4 d-none d-md-block">
+                        <a href="fichas/destacadas" class="button button--block button--light button--clean button--space a11y-tts">Ver más
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </section>
+<?php endif ?>

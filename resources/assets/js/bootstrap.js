@@ -17,6 +17,7 @@ try {
     window.$ = window.jQuery = require('jquery');
 
     require('bootstrap');
+    require('@gobdigital-cl/gob.cl');
 } catch (e) {}
 
 /**

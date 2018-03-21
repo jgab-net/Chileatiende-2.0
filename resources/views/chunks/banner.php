@@ -1,23 +1,22 @@
-<section class="claveunica-banner">
+<section class="section bg-light">
     <div class="container">
-        <div class="col-md-6">
-            <div class="media">
-                <div class="media-left">
-                    <img src="images/claveunica-iso.svg" alt="Claveunica">
-                </div>
-                <div class="media-body">
-                    <div class="media-heading">
-                        <h1>Trámites por internet con tu Clave Única</h1>
+        <div class="row">
+            <div class="col-md-12 col-xl-8">
+                <div class="row">
+                    <div class="col-2">
+                        <img src="images/claveunica-iso.svg" alt="Claveunica">
                     </div>
-                    <p>Accede a servicios digitales del Estado, de manera fácil y segura con tu identidad digital.</p>
+                    <div class="col-10">
+                        <h1 class="a11y-tts">Trámites por internet con tu Clave Única</h1>
+                        <p class="a11y-tts">Accede a servicios digitales del Estado, de manera fácil y segura con tu identidad digital.</p>
+                    </div>
                 </div>
-            </div> 
-        </div>
-        <div class="col-md-6 text-center">
-            <a href="/fichas/11331-obtencion-de-la-clave-unica" class="main-btn blue-btn">
-                Conoce la Clave Única →
-            </a>
-            <p>Podrás realizar trámites en línea<br><strong>de 91 instituciones del Estado.</strong></p>
+            </div>
+            <div class="col-md-12 col-xl-4">
+                <a href="/fichas/11331-obtencion-de-la-clave-unica" class="button button--block site-footer_button">
+                    Conoce la Clave Única
+                </a>
+            </div>
         </div>
     </div>
 </section>
